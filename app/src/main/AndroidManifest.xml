@@ -1,20 +1,293 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="poly.vannhph06247.storemanager">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
+        android:screenOrientation="portrait"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".ScreenSaluteActivity">
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning"
+        android:fullBackupContent="@xml/backup_descriptor">
+        <activity
+            android:name=".activity.ScreenSaluteActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.LoginActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.MoreInforUserActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.HomeActivity"
+            android:label="@string/title_activity_home"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".activity.CustomerActivity"
+            android:label="@string/title_activity_customer"
+            android:parentActivityName=".activity.HomeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="poly.vannhph06247.storemanager.activity.HomeActivity" />
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+        </activity>
+        <activity
+            android:name=".activity.EditCustomerActivity"
+            android:label="@string/title_activity_edit_customer"
+            android:parentActivityName=".activity.CustomerActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="poly.vannhph06247.storemanager.activity.CustomerActivity" />
+        </activity>
+        <activity
+            android:name=".activity.CustomerInforActivity"
+            android:label="@string/title_activity_information_customer"
+            android:parentActivityName=".activity.CustomerActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="poly.vannhph06247.storemanager.activity.CustomerActivity" />
+        </activity>
+        <activity
+            android:name=".activity.ProductTypeActivity"
+            android:label="@string/title_activity_product_type"
+            android:parentActivityName=".activity.HomeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="poly.vannhph06247.storemanager.activity.HomeActivity" />
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+        </activity>
+        <activity
+            android:name=".activity.ProductTypeInforActivity"
+            android:label="@string/title_activity_infor_product_type"
+            android:parentActivityName=".activity.ProductTypeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="poly.vannhph06247.storemanager.activity.ProductTypeActivity" />
+        </activity>
+        <activity
+            android:name=".activity.ProductActivity"
+            android:label="@string/title_activity_product"
+            android:parentActivityName=".activity.HomeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="poly.vannhph06247.storemanager.activity.HomeActivity" />
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+        </activity>
+        <activity
+            android:name=".activity.AddProductActivity"
+            android:label="@string/title_activity_add_product_actitivy"
+            android:parentActivityName=".activity.ProductActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="poly.vannhph06247.storemanager.activity.ProductActivity" />
+        </activity>
+        <activity
+            android:name=".activity.EditProductActivity"
+            android:label="@string/title_activity_edit_product"
+            android:parentActivityName=".activity.ProductActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="poly.vannhph06247.storemanager.activity.ProductActivity" />
+        </activity>
+        <activity
+            android:name=".activity.BillActivity"
+            android:label="@string/title_activity_bill"
+            android:parentActivityName=".activity.HomeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="poly.vannhph06247.storemanager.activity.HomeActivity" />
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+        </activity>
+        <activity
+            android:name=".activity.BillInforActivity"
+            android:label="@string/title_activity_infor_bill"
+            android:parentActivityName=".activity.BillActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="poly.vannhph06247.storemanager.activity.BillActivity" />
+        </activity>
+        <activity
+            android:name=".activity.UserActivity"
+            android:label="@string/title_activity_infor_admin"
+            android:parentActivityName=".activity.HomeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="poly.vannhph06247.storemanager.activity.HomeActivity" />
+        </activity>
+        <activity
+            android:name=".activity.EditUserActivity"
+            android:label="@string/title_activity_edit_infor_admin"
+            android:parentActivityName=".activity.UserActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="poly.vannhph06247.storemanager.activity.UserActivity" />
+        </activity>
+        <activity
+            android:name=".activity.SellingProductsActivity"
+            android:label="@string/title_activity_selling_products"
+            android:parentActivityName=".activity.HomeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="poly.vannhph06247.storemanager.activity.HomeActivity" />
+        </activity>
+        <activity
+            android:name=".activity.StatisticActivity"
+            android:label="@string/title_activity_statistic"
+            android:parentActivityName=".activity.HomeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="poly.vannhph06247.storemanager.activity.HomeActivity" />
+        </activity>
+        <activity
+            android:name=".activity.ProductInforActivity"
+            android:label="@string/title_activity_infor_product"
+            android:parentActivityName=".activity.ProductActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="poly.vannhph06247.storemanager.activity.ProductActivity" />
+        </activity>
+        <activity
+            android:name=".activity.AddCustomerActivty"
+            android:label="@string/title_activity_add_customer_activty"
+            android:parentActivityName=".activity.CustomerActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
+            tools:ignore="UnusedAttribute">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="poly.vannhph06247.storemanager.activity.CustomerActivity" />
+        </activity>
+        <activity
+            android:name=".activity.EditedCustomerInforActivity"
+            android:label="@string/title_activity_edit_infor_customer"
+            android:parentActivityName=".activity.CustomerInforActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="poly.vannhph06247.storemanager.activity.CustomerInforActivity" />
+        </activity>
+        <activity
+            android:name=".activity.EditedProductTypeInforActivity"
+            android:label="@string/title_activity_edited_product_type_infor"
+            android:parentActivityName=".activity.ProductTypeInforActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="poly.vannhph06247.storemanager.activity.ProductTypeInforActivity" />
+        </activity>
+        <activity
+            android:name=".activity.EditedProductInforActivity"
+            android:label="@string/title_activity_edited_product_infor"
+            android:parentActivityName=".activity.ProductInforActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="poly.vannhph06247.storemanager.activity.ProductInforActivity" />
+        </activity>
+        <activity
+            android:name=".activity.EditedBillInforActivity"
+            android:label="@string/title_activity_edited_bill_infor"
+            android:parentActivityName=".activity.BillInforActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="poly.vannhph06247.storemanager.activity.BillInforActivity" />
+        </activity>
+        <activity
+            android:name=".activity.ProductListOfCustomerActivity"
+            android:label="@string/title_activity_product_list_of_customer"
+            android:parentActivityName=".activity.CustomerInforActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="poly.vannhph06247.storemanager.activity.CustomerInforActivity" />
+        </activity>
+        <activity
+            android:name=".activity.ProductListOfProductTypeActivity"
+            android:label="@string/title_activity_product_list_of_product_type"
+            android:parentActivityName=".activity.ProductTypeInforActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="poly.vannhph06247.storemanager.activity.ProductTypeInforActivity" />
+        </activity>
+        <activity
+            android:name=".activity.ProductListOfBillActivity"
+            android:label="@string/title_activity_product_list_of_bill"
+            android:parentActivityName=".activity.BillInforActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="poly.vannhph06247.storemanager.activity.BillInforActivity" />
+        </activity>
+        <activity
+            android:name=".activity.BillDetailActivity"
+            android:label="@string/title_activity_bill_detail"
+            android:parentActivityName=".activity.BillActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="poly.vannhph06247.storemanager.activity.BillActivity" />
         </activity>
     </application>
 

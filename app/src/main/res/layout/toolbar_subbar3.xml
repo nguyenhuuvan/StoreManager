@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.AppBarLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:theme="@style/AppTheme.AppBarOverlay">
+
+    <android.support.v7.widget.Toolbar
+        app:layout_scrollFlags="scroll|enterAlways|snap"
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/gray"
+        android:orientation="horizontal"
+        android:paddingBottom="4dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="4dp">
+
+        <ImageView
+            android:id="@+id/imgCalender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:src="@drawable/lich"
+            tools:ignore="ContentDescription" />
+        <TextView
+            android:text="@string/week"
+            android:layout_toEndOf="@+id/imgCalender"
+            android:layout_centerVertical="true"
+            android:textColor="@color/textgray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:ignore="RelativeOverlap" />
+
+    </RelativeLayout>
+
+</android.support.design.widget.AppBarLayout>

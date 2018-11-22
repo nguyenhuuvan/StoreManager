@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.ProductListOfProductTypeActivity">
+
+    <include layout="@layout/toolbar_subbar" />
+
+    <include layout="@layout/content_list" />
+
+</android.support.design.widget.CoordinatorLayout>

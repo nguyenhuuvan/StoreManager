@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:title="@string/title_nav_home" />
+        <item
+            android:id="@+id/nav_admin"
+            android:title="@string/title_nav_admin" />
+        <item
+            android:id="@+id/nav_toexcel"
+            android:title="@string/title_nav_toexcel" />
+
+        <item
+            android:id="@+id/nav_infor_app"
+            android:title="@string/title_nav_infor_app" />
+    </group>
+
+    <item android:title="@string/other_info">
+        <menu>
+            <item
+                android:id="@+id/nav_logout"
+                android:title="@string/title_nav_logout" />
+            <item
+                android:id="@+id/nav_back"
+                android:title="@string/title_nav_back" />
+        </menu>
+    </item>
+
+</menu>

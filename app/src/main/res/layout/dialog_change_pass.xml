@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@color/white"
+    android:layout_height="match_parent"
+    tools:ignore="Overdraw">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        android:layout_marginBottom="15dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:text="@string/change_pass"/>
+
+    <android.support.design.widget.TextInputLayout
+        app:passwordToggleEnabled="true"
+        app:counterMaxLength="50"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:inputType="textPassword"
+            android:id="@+id/edPassWordOld"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/passOld"/>
+    </android.support.design.widget.TextInputLayout>
+    <android.support.design.widget.TextInputLayout
+        app:passwordToggleEnabled="true"
+        android:layout_width="match_parent"
+        app:counterMaxLength="50"
+        android:layout_height="wrap_content">
+        <EditText
+            android:inputType="textPassword"
+            android:id="@+id/edPassWordNew"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/passNew"/>
+    </android.support.design.widget.TextInputLayout>
+    <android.support.design.widget.TextInputLayout
+        app:passwordToggleEnabled="true"
+        app:counterMaxLength="50"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:inputType="textPassword"
+            android:id="@+id/edPassWordNew2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/passNew2"/>
+    </android.support.design.widget.TextInputLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_marginBottom="3dp"
+            android:id="@+id/btnChange"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:background="@drawable/button_style2"
+            android:text="@string/change"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="40dp" />
+        <Button
+            android:layout_marginStart="10dp"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_marginBottom="3dp"
+            android:id="@+id/btnCancel"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:background="@drawable/button_style2"
+            android:text="@string/cancel"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="40dp" />
+    </LinearLayout>
+</LinearLayout>
