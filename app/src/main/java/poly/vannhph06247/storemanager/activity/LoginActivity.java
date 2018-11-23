@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.util.Objects;
 
@@ -162,6 +163,7 @@ public class LoginActivity extends Library {
                         edUserName.setText(user.getUsername());
                         edPassWord.setText(user.getPassword());
                         edPassWord.setInputType(InputType.TYPE_CLASS_TEXT);
+                        Toast.makeText(LoginActivity.this, getString(R.string.getpass_success), Toast.LENGTH_SHORT).show();
                         dialog.dismiss();
                     } else {
                         if (!user.getAdminEmail().equalsIgnoreCase(adminEmail))

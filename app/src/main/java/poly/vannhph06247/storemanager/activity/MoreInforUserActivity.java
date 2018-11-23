@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import poly.vannhph06247.storemanager.Library;
 import poly.vannhph06247.storemanager.R;
@@ -34,7 +35,7 @@ public class MoreInforUserActivity extends Library {
     }
 
 
-    public void xt(View view) {
+    public void accuracy(View view) {
         String adminName = edAdminName.getText().toString().trim();
         String adminAge = edAdminAge.getText().toString().trim();
         String adminPhone = edAdminPhone.getText().toString().trim();
@@ -67,14 +68,19 @@ public class MoreInforUserActivity extends Library {
                 edAdminName.setError(getString(R.string.string_exist_2_space));
         } else {
             hideSoftKeyboard(this);
-            userDAO.updateUser("ADMIN", changeString(adminName), adminPhone, adminEmail, Integer.parseInt(adminAge));
+            long result = userDAO.updateUser("ADMIN", changeString(adminName), adminPhone, adminEmail, Integer.parseInt(adminAge));
+            if (result > 0) {
+                Toast.makeText(this, getString(R.string.added_infor), Toast.LENGTH_SHORT).show();
+            }else{
+                Toast.makeText(this, getString(R.string.add_fail), Toast.LENGTH_SHORT).show();
+            }
             finish();
             startActivity(new Intent(this, HomeActivity.class));
         }
     }
 
 
-    public void dx(View view) {
+    public void cancel(View view) {
         hideSoftKeyboard(this);
         finish();
         startActivity(new Intent(this, HomeActivity.class));

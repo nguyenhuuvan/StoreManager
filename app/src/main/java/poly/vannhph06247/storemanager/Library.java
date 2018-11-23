@@ -192,5 +192,22 @@ public abstract class Library extends AppCompatActivity {
 
             }
         });
+        SQLiteToExcel sqliteToExcel5 = new SQLiteToExcel(getApplicationContext(), "StoreManager", directory_path);
+        sqliteToExcel5.exportSingleTable("PRODUCTS", "products.xls", new SQLiteToExcel.ExportListener() {
+            @Override
+            public void onStart() {
+
+            }
+
+            @Override
+            public void onCompleted(String filePath) {
+
+            }
+
+            @Override
+            public void onError(Exception e) {
+
+            }
+        });
     }
 }

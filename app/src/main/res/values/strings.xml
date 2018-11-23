@@ -187,4 +187,6 @@
     <string name="customer_">khách hàng</string>
     <string name="productType">nhóm hàng</string>
     <string name="cannot_delete_product_type">Không thể xóa. Bạn phải xóa toàn bộ sản phẩm trong nhóm hàng.</string>
+    <string name="getpass_success">Lấy mật khẩu thành công</string>
+    <string name="added_infor">Thêm thông tin thành công</string>
 </resources>

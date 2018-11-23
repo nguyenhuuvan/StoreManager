@@ -76,7 +76,7 @@ public class BillActivity extends Library implements OnDelete, OnEdit, OnClick {
         setSupportActionBar(toolbar);
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         tvTotal = findViewById(R.id.tvTotal);
-        tvTotal.setText(getString(R.string.total) +" "+ billList.size() + " "+getString(R.string.bill_));
+        tvTotal.setText(getString(R.string.total) + " " + billList.size() + " " + getString(R.string.bill_));
         lvListBill = findViewById(R.id.lvList);
         fabAddBill = findViewById(R.id.fabAdd);
         imgSort = findViewById(R.id.imgSort);
@@ -205,13 +205,23 @@ public class BillActivity extends Library implements OnDelete, OnEdit, OnClick {
     }
 
     @Override
-    public void onDelete(int position) {
+    public void onDelete(final int position) {
         final AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
         builder.setMessage(getString(R.string.delete_message_bill));
         builder.setNegativeButton(getString(R.string.yes), new DialogInterface.OnClickListener() {
+            @SuppressLint("SetTextI18n")
             @Override
             public void onClick(DialogInterface dialog, int which) {
+
+                long result = billDAO.deleteBill(billList.get(position).getBillID());
+                if (result > 0) {
+                    adapterBill.removeItem(position);
+                    tvTotal.setText(getString(R.string.total) + " " + billList.size() + " " + getString(R.string.bill_));
+                    Toast.makeText(BillActivity.this, getString(R.string.deleted), Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(BillActivity.this, getString(R.string.deletefail), Toast.LENGTH_SHORT).show();
+                }
             }
         });
         builder.setPositiveButton(getString(R.string.no), new DialogInterface.OnClickListener() {
@@ -324,12 +334,12 @@ public class BillActivity extends Library implements OnDelete, OnEdit, OnClick {
                             billList = billDAO.getAllBill();
                             adapterBill.changeDataset(billList);
                             Toast.makeText(BillActivity.this, getString(R.string.added), Toast.LENGTH_SHORT).show();
-                            tvTotal.setText(getString(R.string.total) +" "+ billList.size() + " "+getString(R.string.bill_));
+                            tvTotal.setText(getString(R.string.total) + " " + billList.size() + " " + getString(R.string.bill_));
                             if (customerDAO.getCustomerByID(phoneCustomer) == null) {
                                 Customer customer = new Customer(phoneCustomer, changeString(customerName), "", "", "", "", "", "", "", "", "", 0, 0, date.getTime(), 0);
                                 customerDAO.insertCustomer(customer);
                             }
-                            startActivity(new Intent(BillActivity.this,BillDetailActivity.class));
+                            startActivity(new Intent(BillActivity.this, BillDetailActivity.class));
                         } else {
                             Toast.makeText(BillActivity.this, getString(R.string.add_fail), Toast.LENGTH_SHORT).show();
                         }

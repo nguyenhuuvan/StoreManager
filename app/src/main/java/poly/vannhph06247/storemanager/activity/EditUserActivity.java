@@ -5,6 +5,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.util.Objects;
 
@@ -105,7 +106,12 @@ public class EditUserActivity extends Library {
                 edAdminName.setError(getString(R.string.string_exist_2_space));
         } else {
             hideSoftKeyboard(this);
-            userDAO.updateUser("ADMIN", changeString(adminName), adminPhone, adminEmail, Integer.parseInt(adminAge));
+            long result =userDAO.updateUser("ADMIN", changeString(adminName), adminPhone, adminEmail, Integer.parseInt(adminAge));
+            if(result>0){
+                Toast.makeText(this, getString(R.string.edited), Toast.LENGTH_SHORT).show();
+            }else{
+                Toast.makeText(this, getString(R.string.edit_fail), Toast.LENGTH_SHORT).show();
+            }
             finish();
         }
     }

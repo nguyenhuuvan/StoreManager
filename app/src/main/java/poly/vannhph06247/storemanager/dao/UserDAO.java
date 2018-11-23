@@ -33,14 +33,14 @@ public class UserDAO implements Constant {
         db.close();
     }
 
-    public void updateUser(String user, String name, String phone, String email, int age) {
+    public long updateUser(String user, String name, String phone, String email, int age) {
         SQLiteDatabase db = databaseHelper.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(COLUMN_NAME, name);
         contentValues.put(COLUMN_PHONE_NUMBER, phone);
         contentValues.put(COLUMN_EMAIL, email);
         contentValues.put(COLUMN_AGE, age);
-        db.update(USER_TABLE, contentValues, COLUMN_USERNAME + " = ?",
+        return db.update(USER_TABLE, contentValues, COLUMN_USERNAME + " = ?",
                 new String[]{String.valueOf(user)});
     }
 
