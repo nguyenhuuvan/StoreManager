@@ -139,8 +139,6 @@ public class AddCustomerActivty extends Library {
                 } else {
                     customer1.setCustomerAge(Integer.parseInt(customerAge));
                 }
-
-
                 customer1.setOldCustomerName("");
                 customer1.setOldCustomerSex("");
                 customer1.setOldCustomerEmail("");

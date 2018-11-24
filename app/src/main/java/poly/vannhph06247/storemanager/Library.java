@@ -2,7 +2,6 @@ package poly.vannhph06247.storemanager;
 
 import android.app.Activity;
 import android.content.Context;
-import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -12,9 +11,6 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
-import com.ajts.androidmads.library.SQLiteToExcel;
-
-import java.io.File;
 import java.util.Objects;
 
 public abstract class Library extends AppCompatActivity {
@@ -114,9 +110,6 @@ public abstract class Library extends AppCompatActivity {
         } catch (Exception e) {
             return true;
         }
-
-    }
-    protected void sqlToExel(){
 
     }
 }

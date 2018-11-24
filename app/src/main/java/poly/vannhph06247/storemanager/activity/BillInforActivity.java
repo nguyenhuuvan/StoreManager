@@ -1,27 +1,24 @@
 package poly.vannhph06247.storemanager.activity;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.animation.AnimationUtils;
-import android.view.animation.LayoutAnimationController;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import poly.vannhph06247.storemanager.Library;
 import poly.vannhph06247.storemanager.R;
 import poly.vannhph06247.storemanager.adapter.AdapterInformation;
 import poly.vannhph06247.storemanager.listener.OnClick;
 import poly.vannhph06247.storemanager.model.Information;
 
-public class BillInforActivity extends AppCompatActivity implements OnClick{
+public class BillInforActivity extends Library implements OnClick{
     private List<Information> informationList;
     private RecyclerView lvListBillInfor;
     @Override
@@ -43,19 +40,10 @@ public class BillInforActivity extends AppCompatActivity implements OnClick{
         lvListBillInfor = findViewById(R.id.lvList);
     }
 
-    private void runLayoutAnimation(final RecyclerView recyclerView) {
-        final Context context = recyclerView.getContext();
-        final LayoutAnimationController controller =
-                AnimationUtils.loadLayoutAnimation(context, R.anim.layout_animation_slide_left);
-
-        recyclerView.setLayoutAnimation(controller);
-        recyclerView.getAdapter().notifyDataSetChanged();
-        recyclerView.scheduleLayoutAnimation();
-    }
 
     @Override
     protected void onResume() {
-        runLayoutAnimation(lvListBillInfor);
+        runLayoutAnimationLeft(lvListBillInfor);
         super.onResume();
     }
     private void fakeData() {

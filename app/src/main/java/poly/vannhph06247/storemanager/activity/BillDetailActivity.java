@@ -2,16 +2,12 @@ package poly.vannhph06247.storemanager.activity;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.view.animation.AnimationUtils;
-import android.view.animation.LayoutAnimationController;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,12 +15,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import poly.vannhph06247.storemanager.Library;
 import poly.vannhph06247.storemanager.R;
 import poly.vannhph06247.storemanager.adapter.AdapterBillDetail;
 import poly.vannhph06247.storemanager.listener.OnDelete;
 import poly.vannhph06247.storemanager.model.BillDetail;
 
-public class BillDetailActivity extends AppCompatActivity implements OnDelete{
+public class BillDetailActivity extends Library implements OnDelete{
     private RecyclerView lvListBillDetail;
     private List<BillDetail> billDetails;
     @Override
@@ -56,19 +53,10 @@ public class BillDetailActivity extends AppCompatActivity implements OnDelete{
             billDetails.add(new BillDetail("H30122 ", "10", "50000","500000"));
         }
     }
-    private void runLayoutAnimation(final RecyclerView recyclerView) {
-        final Context context = recyclerView.getContext();
-        final LayoutAnimationController controller =
-                AnimationUtils.loadLayoutAnimation(context, R.anim.layout_animation_slide_left);
-
-        recyclerView.setLayoutAnimation(controller);
-        recyclerView.getAdapter().notifyDataSetChanged();
-        recyclerView.scheduleLayoutAnimation();
-    }
 
     @Override
     protected void onResume() {
-        runLayoutAnimation(lvListBillDetail);
+        runLayoutAnimationLeft(lvListBillDetail);
         super.onResume();
     }
     public void test(View view) {

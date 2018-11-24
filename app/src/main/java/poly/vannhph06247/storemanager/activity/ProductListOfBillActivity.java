@@ -3,7 +3,6 @@ package poly.vannhph06247.storemanager.activity;
 import android.app.SearchManager;
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
@@ -11,8 +10,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.animation.AnimationUtils;
-import android.view.animation.LayoutAnimationController;
 import android.widget.ImageView;
 import android.widget.PopupMenu;
 import android.widget.TextView;
@@ -21,11 +18,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import poly.vannhph06247.storemanager.Library;
 import poly.vannhph06247.storemanager.R;
 import poly.vannhph06247.storemanager.adapter.AdapterListProduct2;
 import poly.vannhph06247.storemanager.model.ListProduct;
 
-public class ProductListOfBillActivity extends AppCompatActivity {
+public class ProductListOfBillActivity extends Library {
     private RecyclerView lvListProductType;
     private List<ListProduct> listProductList;
     private ImageView imgSort;
@@ -69,10 +67,10 @@ public class ProductListOfBillActivity extends AppCompatActivity {
                     public boolean onMenuItemClick(MenuItem item) {
                         switch (item.getItemId()){
                             case R.id.sort_by_name:
-                                runLayoutAnimation(lvListProductType);
+                                runLayoutAnimationLeft(lvListProductType);
                                 break;
                             case R.id.sort_by_id:
-                                runLayoutAnimation(lvListProductType);
+                                runLayoutAnimationRight(lvListProductType);
                                 break;
                         }
                         return false;
@@ -82,19 +80,10 @@ public class ProductListOfBillActivity extends AppCompatActivity {
             }
         });
     }
-    private void runLayoutAnimation(final RecyclerView recyclerView) {
-        final Context context = recyclerView.getContext();
-        final LayoutAnimationController controller =
-                AnimationUtils.loadLayoutAnimation(context, R.anim.layout_animation_slide_left);
-
-        recyclerView.setLayoutAnimation(controller);
-        recyclerView.getAdapter().notifyDataSetChanged();
-        recyclerView.scheduleLayoutAnimation();
-    }
 
     @Override
     protected void onResume() {
-        runLayoutAnimation(lvListProductType);
+        runLayoutAnimationLeft(lvListProductType);
         super.onResume();
     }
 
