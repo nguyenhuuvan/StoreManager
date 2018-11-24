@@ -77,7 +77,7 @@ public class HomeActivity extends Library
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     Log.e("","");
                 } else {
-                    Toast.makeText(this, "Ứng dụng chưa có quyền truy cập bộ nhớ", Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, getString(R.string.permission), Toast.LENGTH_LONG).show();
                 }
             }
         }
@@ -186,11 +186,11 @@ public class HomeActivity extends Library
                 alertDialog.show();
                 break;
             case R.id.nav_home:
-                toolbar.setTitle("Chức năng");
+                toolbar.setTitle(getString(R.string.menu));
                 showFragmentHome();
                 break;
             case R.id.nav_infor_app:
-                toolbar.setTitle("Thông tin phần mềm");
+                toolbar.setTitle(getString(R.string.app_infor));
                 showFragmentInforApp();
                 break;
             case R.id.nav_toexcel:

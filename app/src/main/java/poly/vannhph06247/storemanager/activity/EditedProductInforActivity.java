@@ -101,12 +101,12 @@ public class EditedProductInforActivity extends AppCompatActivity implements OnC
                     long result = productDAO.updateProduct(product1);
                     if (result > 0) {
                         finish();
-                        Toast.makeText(EditedProductInforActivity.this, "Đã khôi phục thành công", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(EditedProductInforActivity.this, getString(R.string.recovery_success), Toast.LENGTH_SHORT).show();
                     } else {
-                        Toast.makeText(EditedProductInforActivity.this, "Thất bại", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(EditedProductInforActivity.this, getString(R.string.fail), Toast.LENGTH_SHORT).show();
                     }
                 } else {
-                    Toast.makeText(this, "Không thể khôi phục nhóm hàng đã bị xóa", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, getString(R.string.cannot_recovery_product), Toast.LENGTH_SHORT).show();
                 }
                 break;
         }

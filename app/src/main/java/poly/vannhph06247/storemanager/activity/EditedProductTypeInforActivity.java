@@ -95,9 +95,9 @@ public class EditedProductTypeInforActivity extends Library implements OnClick {
                 long result = productTypeDAO.updateProductType(productType1);
                 if (result > 0) {
                     finish();
-                    Toast.makeText(EditedProductTypeInforActivity.this, "Đã khôi phục thành công", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(EditedProductTypeInforActivity.this, getString(R.string.recovery_success), Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(EditedProductTypeInforActivity.this, "Thất bại", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(EditedProductTypeInforActivity.this, getString(R.string.fail), Toast.LENGTH_SHORT).show();
                 }
                 break;
         }

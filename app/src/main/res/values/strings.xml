@@ -189,4 +189,10 @@
     <string name="cannot_delete_product_type">Không thể xóa. Bạn phải xóa toàn bộ sản phẩm trong nhóm hàng.</string>
     <string name="getpass_success">Lấy mật khẩu thành công</string>
     <string name="added_infor">Thêm thông tin thành công</string>
+    <string name="recovery_success">Đã khôi phục thành công</string>
+    <string name="fail">Thất bại</string>
+    <string name="cannot_recovery_product">Không thể khôi phục nhóm hàng đã bị xóa</string>
+    <string name="permission">Ứng dụng chưa có quyền truy cập bộ nhớ</string>
+    <string name="menu">Chức năng</string>
+    <string name="app_infor">Thông tin phần mềm</string>
 </resources>

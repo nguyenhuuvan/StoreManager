@@ -96,9 +96,9 @@ public class EditedCustomerInforActivity extends AppCompatActivity implements On
                 long result = customerDAO.updateCustomer(customer1);
                 if (result > 0) {
                     finish();
-                    Toast.makeText(EditedCustomerInforActivity.this, "Đã khôi phục thành công", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(EditedCustomerInforActivity.this, getString(R.string.recovery_success), Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(EditedCustomerInforActivity.this, "Thất bại", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(EditedCustomerInforActivity.this, getString(R.string.fail), Toast.LENGTH_SHORT).show();
                 }
                 break;
         }

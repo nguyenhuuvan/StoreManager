@@ -150,10 +150,10 @@ public class AddCustomerActivty extends Library {
                 customer1.setEditedDay(0);
                 long result = customerDAO.insertCustomer(customer1);
                 if (result > 0) {
-                    Toast.makeText(AddCustomerActivty.this, "Thêm thành công", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AddCustomerActivty.this, getString(R.string.added), Toast.LENGTH_SHORT).show();
                     finish();
                 } else {
-                    Toast.makeText(AddCustomerActivty.this, "Thêm thất bại", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AddCustomerActivty.this, R.string.add_fail, Toast.LENGTH_SHORT).show();
                 }
             } else {
                 edCustomerPhone.setError(getString(R.string.customer_id_exist));

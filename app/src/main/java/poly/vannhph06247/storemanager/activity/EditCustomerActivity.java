@@ -182,10 +182,10 @@ public class EditCustomerActivity extends Library {
             customer1.setEditedDay(date.getTime());
             long result = customerDAO.updateCustomer(customer1);
             if (result > 0) {
-                Toast.makeText(EditCustomerActivity.this, "Sửa thành công", Toast.LENGTH_SHORT).show();
+                Toast.makeText(EditCustomerActivity.this, getString(R.string.edited), Toast.LENGTH_SHORT).show();
                 finish();
             } else {
-                Toast.makeText(EditCustomerActivity.this, "Sửa thất bại", Toast.LENGTH_SHORT).show();
+                Toast.makeText(EditCustomerActivity.this, getString(R.string.edit_fail), Toast.LENGTH_SHORT).show();
             }
         }
     }

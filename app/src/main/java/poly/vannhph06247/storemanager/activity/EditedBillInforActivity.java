@@ -7,7 +7,6 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -55,7 +54,6 @@ public class EditedBillInforActivity extends AppCompatActivity implements OnClic
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.recovery:
-                Toast.makeText(this, "Khôi phục", Toast.LENGTH_SHORT).show();
                 break;
         }
         return false;
