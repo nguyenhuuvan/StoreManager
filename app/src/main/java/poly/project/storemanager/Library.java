@@ -13,6 +13,7 @@ import android.view.animation.LayoutAnimationController;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import com.ajts.androidmads.library.SQLiteToExcel;
 
@@ -90,29 +91,14 @@ public abstract class Library extends AppCompatActivity {
     }
 
     protected void runLayoutAnimationLeft(final RecyclerView recyclerView) {
-        final Context context = recyclerView.getContext();
-        final LayoutAnimationController controller =
-                AnimationUtils.loadLayoutAnimation(context, R.anim.layout_animation_slide_left);
 
-        recyclerView.setLayoutAnimation(controller);
-        recyclerView.getAdapter().notifyDataSetChanged();
-        recyclerView.scheduleLayoutAnimation();
     }
 
     protected void runLayoutAnimationRight(final RecyclerView recyclerView) {
-        final Context context = recyclerView.getContext();
-        final LayoutAnimationController controller =
-                AnimationUtils.loadLayoutAnimation(context, R.anim.layout_animation_slide_right);
 
-        recyclerView.setLayoutAnimation(controller);
-        recyclerView.getAdapter().notifyDataSetChanged();
-        recyclerView.scheduleLayoutAnimation();
     }
     protected void startVoiceRecognitionActivity(String value) {
-        Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
-        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
-        intent.putExtra(RecognizerIntent.EXTRA_PROMPT, value);
-        startActivityForResult(intent, REQUEST_CODE);
+        Toast.makeText(this, "Thử nhiệm", Toast.LENGTH_SHORT).show();
     }
     protected boolean checkInteger(String number) {
         try {
@@ -125,114 +111,6 @@ public abstract class Library extends AppCompatActivity {
 
     }
     protected void sqltoExcel(){
-        String directory_path = Environment.getExternalStorageDirectory().getPath() + "/Backup/";
-
-        File file = new File(directory_path);
-        if (!file.exists()) {
-            file.mkdirs();
-        }
-        Log.e("path",directory_path);
-        SQLiteToExcel sqliteToExcel = new SQLiteToExcel(getApplicationContext(), "StoreManager", directory_path);
-        sqliteToExcel.exportSingleTable("PRODUCTS_TYPE", "productType.xls", new SQLiteToExcel.ExportListener() {
-            @Override
-            public void onStart() {
-
-            }
-
-            @Override
-            public void onCompleted(String filePath) {
-
-            }
-
-            @Override
-            public void onError(Exception e) {
-
-            }
-        });
-        SQLiteToExcel sqliteToExcel2 = new SQLiteToExcel(getApplicationContext(), "StoreManager", directory_path);
-        sqliteToExcel2.exportSingleTable("USERS", "users.xls", new SQLiteToExcel.ExportListener() {
-            @Override
-            public void onStart() {
-
-            }
-
-            @Override
-            public void onCompleted(String filePath) {
-
-            }
-
-            @Override
-            public void onError(Exception e) {
-
-            }
-        });
-        SQLiteToExcel sqliteToExcel3 = new SQLiteToExcel(getApplicationContext(), "StoreManager", directory_path);
-        sqliteToExcel3.exportSingleTable("BILLS", "bills.xls", new SQLiteToExcel.ExportListener() {
-            @Override
-            public void onStart() {
-
-            }
-
-            @Override
-            public void onCompleted(String filePath) {
-
-            }
-
-            @Override
-            public void onError(Exception e) {
-
-            }
-        });
-        SQLiteToExcel sqliteToExcel4 = new SQLiteToExcel(getApplicationContext(), "StoreManager", directory_path);
-        sqliteToExcel4.exportSingleTable("CUSTOMERS", "customers.xls", new SQLiteToExcel.ExportListener() {
-            @Override
-            public void onStart() {
-
-            }
-
-            @Override
-            public void onCompleted(String filePath) {
-
-            }
-
-            @Override
-            public void onError(Exception e) {
-
-            }
-        });
-        SQLiteToExcel sqliteToExcel5 = new SQLiteToExcel(getApplicationContext(), "StoreManager", directory_path);
-        sqliteToExcel5.exportSingleTable("PRODUCTS", "products.xls", new SQLiteToExcel.ExportListener() {
-            @Override
-            public void onStart() {
-
-            }
-
-            @Override
-            public void onCompleted(String filePath) {
-
-            }
-
-            @Override
-            public void onError(Exception e) {
-
-            }
-        });
-        SQLiteToExcel sqliteToExcel6 = new SQLiteToExcel(getApplicationContext(), "StoreManager", directory_path);
-        sqliteToExcel6.exportSingleTable("BillDetail", "billdetails.xls", new SQLiteToExcel.ExportListener() {
-            @Override
-            public void onStart() {
-
-            }
-
-            @Override
-            public void onCompleted(String filePath) {
-
-            }
-
-            @Override
-            public void onError(Exception e) {
-
-            }
-        });
+        Toast.makeText(this, "Thử nhiệm", Toast.LENGTH_SHORT).show();
     }
 }
