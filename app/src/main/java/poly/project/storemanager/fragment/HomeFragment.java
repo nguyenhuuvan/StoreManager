@@ -91,13 +91,11 @@ public class HomeFragment extends Fragment {
                 startActivity(new Intent(getActivity(), StatisticActivity.class));
             }
         });
-/*
         try {
             fakedDataSQL();
         } catch (Exception e) {
             Log.e("fakeDataSQL", e.toString());
         }
-*/
 
         return view;
     }
