@@ -32,7 +32,7 @@
             android:src="@drawable/lich"
             tools:ignore="ContentDescription" />
         <TextView
-            android:text="@string/day"
+            android:id="@+id/tvCalender"
             android:layout_toEndOf="@+id/imgCalender"
             android:layout_centerVertical="true"
             android:textColor="@color/textgray"

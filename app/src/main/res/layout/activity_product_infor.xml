@@ -7,7 +7,8 @@
     tools:context=".activity.ProductInforActivity">
 
     <include layout="@layout/toolbar" />
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imgProduct"
         android:layout_marginTop="8dp"
         android:layout_gravity="center_horizontal"
         android:src="@drawable/product"

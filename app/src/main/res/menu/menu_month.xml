@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/month1" android:title="@string/month1"/>
+    <item android:id="@+id/month2" android:title="@string/month2"/>
+    <item android:id="@+id/month3" android:title="@string/month3"/>
+    <item android:id="@+id/month4" android:title="@string/month4"/>
+    <item android:id="@+id/month5" android:title="@string/month5"/>
+    <item android:id="@+id/month6" android:title="@string/month6"/>
+    <item android:id="@+id/month7" android:title="@string/month7"/>
+    <item android:id="@+id/month8" android:title="@string/month8"/>
+    <item android:id="@+id/month9" android:title="@string/month9"/>
+    <item android:id="@+id/month10" android:title="@string/month10"/>
+    <item android:id="@+id/month11" android:title="@string/month11"/>
+    <item android:id="@+id/month12" android:title="@string/month12"/>
+</menu>

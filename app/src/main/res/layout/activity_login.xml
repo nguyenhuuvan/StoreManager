@@ -12,7 +12,7 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="2.5"
+        android:layout_weight="3.5"
         android:background="@color/colorPrimary"
         android:paddingLeft="30dp"
         android:paddingRight="30dp">
@@ -113,27 +113,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:background="@drawable/button_style1"/>
-            <TextView
-                android:layout_marginTop="5dp"
-                android:textAlignment="center"
-                android:textSize="16sp"
-                android:text="@string/or"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
 
-            <Button
-                android:layout_marginTop="5dp"
-                style="?android:attr/borderlessButtonStyle"
-                android:layout_marginBottom="5dp"
-                android:textSize="16sp"
-                android:text="@string/login_fb"
-                android:textAllCaps="false"
-                android:textColor="@color/white"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:background="@drawable/button_facebook"/>
         </LinearLayout>
         <TextView
+            android:id="@+id/hotline"
             android:paddingBottom="10dp"
             android:textSize="14sp"
             android:textColor="@color/colorPrimaryDark"
