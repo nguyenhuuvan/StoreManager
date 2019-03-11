@@ -19,4 +19,20 @@
     <style name="DialogAnimation">
         <item name="android:windowEnterAnimation">@anim/slider_up</item>
     </style>
+    <style name="ProgressBar">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+
+        <item name="progress_max">100</item>
+        <item name="progress_current">50</item>
+
+        <item name="progress_unreached_color">@color/white</item>
+        <item name="progress_reached_color">@color/colorPrimaryDark</item>
+        <item name="progress_text_size">10sp</item>
+        <item name="progress_text_color">@color/colorPrimaryDark</item>
+
+        <item name="progress_reached_bar_height">2.5dp</item>
+        <item name="progress_unreached_bar_height">1.5dp</item>
+    </style>
+
 </resources>

@@ -12,13 +12,24 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="3.5"
+        android:layout_weight="4"
         android:background="@color/colorPrimary"
         android:paddingLeft="30dp"
         android:paddingRight="30dp">
+
+        <ImageView
+            android:layout_gravity="center"
+            android:src="@drawable/poly1"
+            android:layout_weight="2"
+            android:layout_width="180dp"
+            android:layout_height="0dp"
+            tools:ignore="NestedWeights" />
+
         <TextView
+            android:gravity="center"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="0.9"
             android:background="@color/white"
             android:padding="16sp"
             android:text="@string/title_login"
@@ -94,27 +105,59 @@
                     android:layout_height="wrap_content"
                     android:text="@string/login_repass" />
 
-                <TextView
-                    android:onClick="forgetPass"
-                    android:text="@string/forgetpass"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="end" />
             </LinearLayout>
-            <Button
-                android:onClick="login"
-                android:layout_marginTop="5dp"
-                style="?android:attr/borderlessButtonStyle"
-                android:textSize="16sp"
-                android:text="@string/login"
-                android:textAllCaps="false"
-                android:textColor="@color/white"
+            <LinearLayout
+                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:background="@drawable/button_style1"/>
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:onClick="login"
+                    android:layout_marginTop="5dp"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:textSize="16sp"
+                    android:text="@string/login"
+                    android:textAllCaps="false"
+                    android:layout_weight="1"
+                    android:textColor="@color/white"
+                    android:layout_width="0dp"
+                    android:layout_height="35dp"
+                    android:background="@drawable/button_style1"/>
+
+                <Button
+                    android:layout_marginStart="10dp"
+                    android:onClick="cancel"
+                    android:layout_marginTop="5dp"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:textSize="16sp"
+                    android:text="@string/cancel"
+                    android:textAllCaps="false"
+                    android:layout_weight="1"
+                    android:textColor="@color/white"
+                    android:layout_width="0dp"
+                    android:layout_height="35dp"
+                    android:background="@drawable/button_style1"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:textStyle="bold"
+                android:layout_marginTop="20dp"
+                android:onClick="forgetPass"
+                android:text="@string/forgetpass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center" />
+
 
         </LinearLayout>
+        <ProgressBar
+            android:layout_marginTop="25dp"
+            android:id="@+id/progressbar"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:visibility="invisible" />
         <TextView
             android:id="@+id/hotline"
             android:paddingBottom="10dp"
